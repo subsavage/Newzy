@@ -18,13 +18,15 @@ class HomePage extends StatelessWidget {
           title: const Text(
             "Newzy",
             style: TextStyle(
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               color: AppColors.titleTextColor,
             ),
           )),
       body: Obx(() {
         if (newsController.isLoading.value) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         }
         return ListView.builder(
           itemCount: newsController.newsList.length,

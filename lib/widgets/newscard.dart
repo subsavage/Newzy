@@ -36,14 +36,17 @@ class NewsCard extends StatelessWidget {
       child: Card(
         color: AppColors.backgroundColor,
         margin: const EdgeInsets.all(12),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
         elevation: 4,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius:
-                  const BorderRadius.vertical(top: Radius.circular(12)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(12),
+              ),
               child: Image.network(
                 imageUrl,
                 height: 200,
@@ -52,8 +55,9 @@ class NewsCard extends StatelessWidget {
                 errorBuilder: (context, error, stackTrace) => Container(
                   height: 200,
                   color: Colors.grey[300],
-                  child:
-                      const Center(child: Icon(Icons.broken_image, size: 50)),
+                  child: const Center(
+                    child: Icon(Icons.broken_image, size: 50),
+                  ),
                 ),
               ),
             ),

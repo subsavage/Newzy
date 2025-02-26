@@ -1,8 +1,8 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
-// const String baseUrl = "http://localhost:5000";
-const String baseUrl = "http://172.16.123.122:5000";
+final String baseUrl = dotenv.env['BASE_URL'] ?? "Url not found";
 
 class NewsService {
   // Fetch News by Category
@@ -17,7 +17,6 @@ class NewsService {
     }
   }
 
-  // Fetch Favorite Articles
   Future<List<dynamic>> fetchFavorites() async {
     final response = await http.get(Uri.parse("$baseUrl/favorites"));
 
