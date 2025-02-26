@@ -6,7 +6,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://drive.google.com/file/d/12Np-dKa0zbr1BuGuPuux0DZKWmyqRDlH/view?usp=drive_link" alt="project-screenshot" width="400" height="400/">
+<img src="[https://drive.google.com/file/d/12Np-dKa0zbr1BuGuPuux0DZKWmyqRDlH/view?usp=drive_link](https://github.com/user-attachments/assets/af4ad31c-e827-4c4c-8a4a-98f8ff5d5161)" alt="project-screenshot" width="400" height="400/">
 
 <img src="https://drive.google.com/file/d/1O0WekPytWfhESlobnADmXusEsErbNpfQ/view?usp=drive_link" alt="project-screenshot" width="400" height="400/">
 
