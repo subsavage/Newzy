@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:newsapp/widgets/colors.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsDetailPage extends StatefulWidget {
@@ -22,33 +24,17 @@ class NewsDetailPage extends StatefulWidget {
 }
 
 class _NewsDetailPageState extends State<NewsDetailPage> {
-  late final WebViewController _controller;
-  bool isLoading = true;
+  late WebViewController controller;
+  final RxBool isLoading = true.obs;
 
   @override
   void initState() {
     super.initState();
-    _controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(const Color(0xFFFFFFFF))
+    controller = WebViewController()
       ..setNavigationDelegate(
         NavigationDelegate(
-          onPageStarted: (String url) {
-            setState(() {
-              isLoading = true;
-            });
-          },
-          onPageFinished: (String url) {
-            setState(() {
-              isLoading = false;
-            });
-          },
-          onWebResourceError: (WebResourceError error) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                  content: Text("Failed to load page: ${error.description}")),
-            );
-          },
+          onPageStarted: (url) => isLoading.value = true,
+          onPageFinished: (url) => isLoading.value = false,
         ),
       )
       ..loadRequest(Uri.parse(widget.url));
@@ -57,15 +43,20 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding:
-            EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05),
-        child: Stack(
-          children: [
-            WebViewWidget(controller: _controller),
-            if (isLoading) const Center(child: CircularProgressIndicator()),
-          ],
-        ),
+      backgroundColor: AppColors.backgroundColor,
+      body: Stack(
+        children: [
+          Padding(
+            padding:
+                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05),
+            child: WebViewWidget(controller: controller),
+          ),
+          Obx(() => isLoading.value
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : const SizedBox.shrink()),
+        ],
       ),
     );
   }

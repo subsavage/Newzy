@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:newsapp/controller/news_controller.dart';
 import 'package:newsapp/pages/homepage.dart';
 
 void main() {
+  Get.put(NewsController(), permanent: true);
   runApp(const MyApp());
 }
 
@@ -10,13 +13,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'News App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      title: 'Newzy',
       home: HomePage(),
     );
   }

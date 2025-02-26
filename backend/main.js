@@ -10,13 +10,11 @@ const PORT = 5000;
 const NEWS_API_KEY = process.env.NEWS_API_KEY;
 const MONGO_URI = process.env.MONGO_URI;
 
-// Connect to MongoDB
 mongoose
   .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error(err));
 
-// Define the FavoriteArticle schema
 const favoriteArticleSchema = new mongoose.Schema({
   title: String,
   url: String,
@@ -39,7 +37,7 @@ app.get("/news", async (req, res) => {
   }
 });
 
-// Store favorite articles
+
 app.post("/favorites", async (req, res) => {
   try {
     const { title, url, source, category } = req.body;
@@ -52,7 +50,7 @@ app.post("/favorites", async (req, res) => {
   }
 });
 
-// Get all favorite articles
+
 app.get("/favorites", async (req, res) => {
   try {
     const articles = await FavoriteArticle.find();
@@ -62,7 +60,7 @@ app.get("/favorites", async (req, res) => {
   }
 });
 
-// Delete a favorite article
+
 app.delete("/favorites/:id", async (req, res) => {
   try {
     await FavoriteArticle.findByIdAndDelete(req.params.id);
