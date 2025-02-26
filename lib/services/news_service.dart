@@ -5,10 +5,17 @@ import 'package:http/http.dart' as http;
 final String baseUrl = dotenv.env['BASE_URL'] ?? "Url not found";
 
 class NewsService {
-  // Fetch News by Category
-  Future<List<dynamic>> fetchNews({String category = "general"}) async {
-    final response =
-        await http.get(Uri.parse("$baseUrl/news?category=$category"));
+  // Fetch news by category or search query
+  Future<List<dynamic>> fetchNews(
+      {String category = "general", String query = ""}) async {
+    String url = "$baseUrl/news?category=$category";
+
+    // If a search query exists, add it to the request URL
+    if (query.isNotEmpty) {
+      url += "&q=$query";
+    }
+
+    final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       return json.decode(response.body);
@@ -17,6 +24,7 @@ class NewsService {
     }
   }
 
+  // Fetch favorites
   Future<List<dynamic>> fetchFavorites() async {
     final response = await http.get(Uri.parse("$baseUrl/favorites"));
 
