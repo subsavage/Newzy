@@ -6,15 +6,17 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="[https://drive.google.com/file/d/12Np-dKa0zbr1BuGuPuux0DZKWmyqRDlH/view?usp=drive_link](https://github.com/user-attachments/assets/af4ad31c-e827-4c4c-8a4a-98f8ff5d5161)" alt="project-screenshot" width="400" height="400/">
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/fc967a0f-b1b0-458f-97d4-ff3c941d5dd6" width="216" height="384"></td>
+    <td><img src="https://github.com/user-attachments/assets/7d35d9d8-0217-4e5c-ab89-9037a715d531" width="216" height="384"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/35fa93f7-7660-40aa-baed-5d9f4a212acc" width="216" height="384"></td>
+    <td><img src="https://github.com/user-attachments/assets/9704b974-09eb-42f6-a0c3-cae3fafadd5e" width="216" height="384"></td>
+  </tr>
+</table>
 
-<img src="https://drive.google.com/file/d/1O0WekPytWfhESlobnADmXusEsErbNpfQ/view?usp=drive_link" alt="project-screenshot" width="400" height="400/">
-
-<img src="https://drive.google.com/file/d/1pO4iQNbhbJuR4Y5u9MoP6-qH2075JfPF/view?usp=drive_link" alt="project-screenshot" width="400" height="400/">
-
-<img src="https://drive.google.com/file/d/1nPLw7gp5mCqh9-pOxrPtwwTvWE45UnyV/view?usp=drive_link" alt="project-screenshot" width="400" height="400/">
-
-![Alt text](https://drive.google.com/file/d/12Np-dKa0zbr1BuGuPuux0DZKWmyqRDlH/view?usp=drive_link)
   
 <h2>🧐 Features</h2>
 
@@ -23,4 +25,4 @@ Here're some of the project's best features:
 *   Search by keyword
 *   Search by category
 *   Clean UI
-![4](https://github.com/user-attachments/assets/fc967a0f-b1b0-458f-97d4-ff3c941d5dd6)
+
