@@ -7,7 +7,6 @@ import 'package:newsapp/pages/homepage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-
   Get.put(NewsController(), permanent: true);
   runApp(const MyApp());
 }

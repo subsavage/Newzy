@@ -4,40 +4,46 @@ import 'package:newsapp/services/news_service.dart';
 class NewsController extends GetxController {
   final NewsService _newsService = NewsService();
 
-  var newsList = [].obs;
+  var newsList = <dynamic>[].obs;
   var isLoading = false.obs;
   var selectedCategory = "general".obs;
   var searchQuery = "".obs;
 
   @override
   void onInit() {
-    fetchNews();
     super.onInit();
+    fetchNews();
   }
 
   void fetchNews() async {
     isLoading.value = true;
     try {
       var news = await _newsService.fetchNews(
-        category: selectedCategory.value,
+        category: searchQuery.value.isNotEmpty ? "" : selectedCategory.value,
         query: searchQuery.value,
       );
       newsList.assignAll(news);
+      update();
     } catch (e) {
-      print("Error fetching news: $e");
+      // print("Error fetching news: $e");
     }
     isLoading.value = false;
   }
 
-  // Update category and fetch news
   void updateCategory(String category) {
-    selectedCategory.value = category;
-    fetchNews();
+    if (selectedCategory.value != category) {
+      selectedCategory.value = category;
+      searchQuery.value = "";
+      fetchNews();
+    }
   }
 
-  // Search for news articles
   void searchNews(String query) {
-    searchQuery.value = query;
-    fetchNews();
+    if (query.isEmpty) {
+      fetchNews();
+    } else {
+      searchQuery.value = query;
+      fetchNews();
+    }
   }
 }
