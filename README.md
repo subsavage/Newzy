@@ -1,6 +1,6 @@
 <p align="center"><img src="https://socialify.git.ci/subsavage/Newzy/image?custom_description=A+news+app+everyone&amp;description=1&amp;font=Bitter&amp;name=1&amp;pattern=Circuit+Board&amp;theme=Dark" alt="project-image"></p>
 
-<p id="description">A news app where viewers can fetch the latest news search for specific news and even choose from different categories to view tehir favorite news</p>
+<p id="description">A news app where viewers can fetch the latest news search for specific news and even choose from different categories to view their favorite news</p>
 
 <p align="center"><img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&amp;logo=flutter&amp;logoColor=white" alt="shields"><img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&amp;logo=nodedotjs&amp;logoColor=white" alt="shields"></p>
 
