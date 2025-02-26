@@ -23,3 +23,4 @@ Here're some of the project's best features:
 *   Search by keyword
 *   Search by category
 *   Clean UI
+![4](https://github.com/user-attachments/assets/fc967a0f-b1b0-458f-97d4-ff3c941d5dd6)
