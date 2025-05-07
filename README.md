@@ -4,6 +4,8 @@
 
 <p align="center"><img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&amp;logo=flutter&amp;logoColor=white" alt="shields"><img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&amp;logo=nodedotjs&amp;logoColor=white" alt="shields"></p>
 
+[Download it here](https://drive.google.com/file/d/1NZtqKdFiE6hnmNTJ_FYIN5aPtiuABmd_/view?usp=drivesdk)
+
 <h2>Project Screenshots:</h2>
 
 <table>
